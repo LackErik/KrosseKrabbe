@@ -12,7 +12,7 @@ public class Raycaster : MonoBehaviour
     public GameObject[] objectsInOrder;
     public List<Interaction> interactions;
     private GameObject tempSelected;
-    public Transform tempEndPosition;
+    private Transform tempEndPosition;
     
 
     private void Awake()
@@ -64,20 +64,21 @@ public class Raycaster : MonoBehaviour
     {
         if (selectedGameObject.Equals(interactions[objectIndex].model))
         {
-            
+            tempEndPosition = interactions[objectIndex].endPosition;
+            holding = true;
+            tempSelected = interactions[objectIndex].model;
+
             if (objectIndex < 9) {
                 objectIndex++;
             }
-            holding = true;
+            
           
-            tempSelected = selectedGameObject;
+            
            
 
 
             Debug.Log("Nr." + objectIndex + " " + selectedGameObject.name);
-            Debug.Log("Object: " + interactions[objectIndex].model.name);
-            Debug.Log("ziel Position: " + interactions[objectIndex].endPosition.transform.position);
-            Debug.Log("ziel error: " + interactions[objectIndex].errorMsg);
+           
             // txt.SetText("Nr." + objectIndex + " " + selectedGameObject.name);
 
         }
@@ -96,6 +97,7 @@ public class Raycaster : MonoBehaviour
         {
             if (selectedGameObject.transform.position.z < 1.401f && selectedGameObject.transform.position.z > 1.147)
             {
+                Debug.Log(selectedGameObject.name);
                 selectedGameObject.transform.position = tempEndPosition.position;
                 holding = false;
                
