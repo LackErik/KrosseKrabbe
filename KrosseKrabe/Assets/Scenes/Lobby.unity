@@ -1161,9 +1161,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.025, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1168584211}
-  - {fileID: 1224228335}
+  m_Children: []
   m_Father: {fileID: 1405106090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1514,7 +1512,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1097327115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958492116}
+        m_TargetAssemblyTypeName: HandleScenes, Assembly-CSharp
+        m_MethodName: ChangeSceneToKitchen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1097327115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1755,18 +1765,18 @@ RectTransform:
   m_GameObject: {fileID: 1168584210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9756098, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1278831927}
   - {fileID: 1566301420}
   - {fileID: 2071058811}
-  m_Father: {fileID: 820549078}
-  m_RootOrder: 0
+  m_Father: {fileID: 1405106090}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -110.58534, y: 39.5}
+  m_AnchoredPosition: {x: -100.000015, y: 30}
   m_SizeDelta: {x: 149.02368, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168584212
@@ -1812,7 +1822,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1168584213}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958492116}
+        m_TargetAssemblyTypeName: HandleScenes, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1168584213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,18 +1901,18 @@ RectTransform:
   m_GameObject: {fileID: 1224228334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9756098, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1148891456}
   - {fileID: 2021379834}
   - {fileID: 369407965}
-  m_Father: {fileID: 820549078}
-  m_RootOrder: 1
+  m_Father: {fileID: 1405106090}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 108.63414, y: 39.5}
+  m_AnchoredPosition: {x: 98.000015, y: 30}
   m_SizeDelta: {x: 149.02368, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224228336
@@ -2086,6 +2108,8 @@ RectTransform:
   - {fileID: 820549078}
   - {fileID: 1776069205}
   - {fileID: 1097327113}
+  - {fileID: 1168584211}
+  - {fileID: 1224228335}
   m_Father: {fileID: 1958492115}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2451,7 +2475,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1776069207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1958492116}
+        m_TargetAssemblyTypeName: HandleScenes, Assembly-CSharp
+        m_MethodName: ChangeSceneToKitchen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1776069207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2634,6 +2670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958492115}
+  - component: {fileID: 1958492116}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2657,6 +2694,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958492116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958492114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc274ec5e9af2f4aa30a3c09966d524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2021379833
 GameObject:
   m_ObjectHideFlags: 0
