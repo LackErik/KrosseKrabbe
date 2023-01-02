@@ -523,7 +523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2f47c71008d63a84ea5aff2846062450, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f47c71008d63a84ea5aff2846062450, type: 3}
       propertyPath: m_LocalScale.x
@@ -1697,7 +1697,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1958492116}
-        m_TargetAssemblyTypeName: HandleScenes, Assembly-CSharp
+        m_TargetAssemblyTypeName: HandleMenuUI, Assembly-CSharp
         m_MethodName: ChangeSceneToKitchen
         m_Mode: 1
         m_Arguments:
@@ -2007,7 +2007,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1958492116}
-        m_TargetAssemblyTypeName: HandleScenes, Assembly-CSharp
+        m_TargetAssemblyTypeName: HandleMenuUI, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -2722,7 +2722,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1958492116}
-        m_TargetAssemblyTypeName: HandleScenes, Assembly-CSharp
+        m_TargetAssemblyTypeName: HandleMenuUI, Assembly-CSharp
         m_MethodName: ChangeSceneToKitchen
         m_Mode: 1
         m_Arguments:
@@ -2948,9 +2948,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958492114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc274ec5e9af2f4aa30a3c09966d524, type: 3}
+  m_Script: {fileID: 11500000, guid: 64bc6e95fa90b8a438640c3844a4ab97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuUI: {fileID: 0}
 --- !u!1 &2021379833
 GameObject:
   m_ObjectHideFlags: 0
