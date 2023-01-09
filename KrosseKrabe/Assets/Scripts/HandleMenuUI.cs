@@ -7,6 +7,7 @@ public class HandleMenuUI : MonoBehaviour
 {
     //public static bool MenuIsActive = false;
     public GameObject menuUI;
+    public GameObject ingameUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +22,19 @@ public class HandleMenuUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             // Menü aktivieren
             menuUI.SetActive(true);
+            
+
             // Mouse Interaktion solange das Menü offen ist erlauben sonst wie "inGame"
             Cursor.lockState = CursorLockMode.Confined;
         }
+        
         
 
     }
     public void CloseMenuByBotton() {
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // handle Scenes:

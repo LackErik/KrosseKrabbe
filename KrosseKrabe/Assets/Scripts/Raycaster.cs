@@ -11,8 +11,15 @@ public class Raycaster : MonoBehaviour
     private int objectIndex;
     public GameObject[] objectsInOrder;
     public List<Interaction> interactions;
+    public bool InteractionsCompleted => objectIndex >= interactions.Count;
+    private bool interactionInProgress;
     private GameObject tempSelected;
     private Transform tempEndPosition;
+
+    // Pass Information to the IngameUI Script
+    public IngameUI ingameUiScript;
+    private int errorCount;
+    private int helpCount;
     
 
     private void Awake()
@@ -20,7 +27,6 @@ public class Raycaster : MonoBehaviour
         holding = false;
         cam = Camera.main;
     }
-    // Update is called once per frame
     void Update()
     {
         Ray();
@@ -31,9 +37,7 @@ public class Raycaster : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 20.0f, layerMask))
             {
-
                 UpdateSelection(hit.transform.gameObject);
-
             }
 
         }
@@ -41,9 +45,18 @@ public class Raycaster : MonoBehaviour
         {
             holdObject(tempSelected);
         }
+        //UI Funktion für Hilfe / Tipps
+        getHelp();
+        if(InteractionsCompleted) {
+            // Training beenden
+            // Final Score 
+            // Szene verlassen oder Menü öffnen und zum Menü rechts davon FinalScore anzeigen
+        }
         
-    }
 
+
+
+    }
     void Ray()
     {
         //Ray ray = new Ray(transform.position, transform.forward);
@@ -72,18 +85,14 @@ public class Raycaster : MonoBehaviour
                 objectIndex++;
             }
             
-          
-            
-           
-
-
             Debug.Log("Nr." + objectIndex + " " + selectedGameObject.name);
-           
             // txt.SetText("Nr." + objectIndex + " " + selectedGameObject.name);
 
         }
         else
         {
+            //UI Funktion für Error jedoch nur dann wenn falsch geklickt
+            didError(selectedGameObject);
             Debug.Log("Flase: " + interactions[objectIndex].model);
            // txt.SetText("Wrong Number");
         }
@@ -105,4 +114,41 @@ public class Raycaster : MonoBehaviour
         }
         
     }
+
+    void getHelp(){
+        // Users can request help with the H key as long as we still have "open" interactions (the training is not completed).
+            if (Input.GetKeyDown(KeyCode.H) && !InteractionsCompleted)
+            {
+                // If your help counter is limited (because you display the help permanently after it was requested)
+                // then you can do this ...
+                // if (!currentInteraction.HelpCounted)
+                // {
+                //     helpCount++;
+                //     currentInteraction.HelpCounted = true;
+                // }
+                // otherwise just do ...
+                helpCount++;
+                
+                ingameUiScript.DisplayHelp(interactions[objectIndex].helpMsg, helpCount);
+            }
+    }
+
+    void didError(GameObject selectedGameObject){
+        // Wenn keine weitere interactions folgen, ist das training beendet. 
+        if(InteractionsCompleted)
+            return;
+            
+            // hat der nutzer das richtige Objekt geklickt? dann fahre fort 
+        if(selectedGameObject.Equals(interactions[objectIndex].model))
+        {
+            return;
+        }
+            // sonst hat er das falsche Objekt geklickt
+        else
+        {
+            errorCount++;
+            ingameUiScript.DisplayError(interactions[objectIndex].errorMsg, errorCount);
+        }
+    }
+
 }
