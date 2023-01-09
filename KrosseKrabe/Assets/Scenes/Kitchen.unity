@@ -3365,6 +3365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 696577946}
+  ingameUI: {fileID: 770290899}
 --- !u!1 &741476375
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,6 +27,13 @@ public class HandleMenuUI : MonoBehaviour
             // Mouse Interaktion solange das Menü offen ist erlauben sonst wie "inGame"
             Cursor.lockState = CursorLockMode.Confined;
         }
+
+        // andere UI verstecken wenn Menü offen
+        if (menuUI.activeSelf) {
+            ingameUI.SetActive(false);
+        } else {
+            ingameUI.SetActive(true);
+        }
         
         
 
