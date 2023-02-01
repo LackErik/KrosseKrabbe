@@ -15,6 +15,8 @@ public class Raycaster : MonoBehaviour
     private bool interactionInProgress;
     private GameObject tempSelected;
     private Transform tempEndPosition;
+    public GameObject senf;
+    public GameObject ketchup;
 
     // Pass Information to the IngameUI Script
     public IngameUI ingameUiScript;
@@ -86,6 +88,7 @@ public class Raycaster : MonoBehaviour
             }
             
             Debug.Log("Nr." + objectIndex + " " + selectedGameObject.name);
+        
             // txt.SetText("Nr." + objectIndex + " " + selectedGameObject.name);
 
         }
@@ -109,7 +112,15 @@ public class Raycaster : MonoBehaviour
                 Debug.Log(selectedGameObject.name);
                 selectedGameObject.transform.position = tempEndPosition.position;
                 holding = false;
-               
+                if (objectIndex == 2)
+                {
+                    ketchup.SetActive(true);
+                }
+                if (objectIndex == 3)
+                {
+                    senf.SetActive(true);
+                }
+
             }
         }
         
