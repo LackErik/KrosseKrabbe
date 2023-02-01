@@ -22,6 +22,10 @@ public class Raycaster : MonoBehaviour
     public IngameUI ingameUiScript;
     private int errorCount;
     private int helpCount;
+
+    //handle RawMeat
+    public GameObject meatGrillPosition;
+    public GameObject rawMeat;
     
 
     private void Awake()
@@ -109,21 +113,40 @@ public class Raycaster : MonoBehaviour
         {
             if (selectedGameObject.transform.position.z < 1.401f && selectedGameObject.transform.position.z > 1.147)
             {
-                Debug.Log(selectedGameObject.name);
-                selectedGameObject.transform.position = tempEndPosition.position;
-                holding = false;
-                if (objectIndex == 2)
+                // wenn selectedGameObject nicht rawMeat
+                if(selectedGameObject != rawMeat)
                 {
-                    ketchup.SetActive(true);
+                    Debug.Log(selectedGameObject.name);
+                    selectedGameObject.transform.position = tempEndPosition.position;
+                    holding = false;
+                    if (objectIndex == 2)
+                    {
+                        ketchup.SetActive(true);
+                    }
+                    if (objectIndex == 3)
+                    {
+                        senf.SetActive(true);
+                    }
                 }
-                if (objectIndex == 3)
-                {
-                    senf.SetActive(true);
-                }
-
             }
         }
-        
+
+        //handle rawMeat transform ... danach wirkt das GrillBehavior Script
+        if (selectedGameObject.transform.position.x < -0.89f && selectedGameObject.transform.position.x > -1.47f)
+        {
+            if (selectedGameObject.transform.position.z < 4.0f && selectedGameObject.transform.position.z > 3.4f)
+            {
+                Debug.Log(selectedGameObject.name);
+                if(selectedGameObject == rawMeat)
+                {
+                    Debug.Log(selectedGameObject.name + " == " + rawMeat.name);
+                    selectedGameObject.transform.position = meatGrillPosition.transform.position;
+                    holding = false;
+                }
+                
+            }
+        }
+
     }
 
     void getHelp(){
