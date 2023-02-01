@@ -17,10 +17,13 @@ public class moveSimple : MonoBehaviour
     public float jumpHight = 0.5f;
 
     bool isGrounded;
+    AudioSource audiofoot;
+
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        audiofoot = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +36,13 @@ public class moveSimple : MonoBehaviour
         }
         xAchse = Input.GetAxis("Horizontal");
         zAchse = Input.GetAxis("Vertical");
+ 
+        if(xAchse != 0 || zAchse != 0) 
+        {
+            audiofoot.Play();
+            Debug.Log("laufe");
+        }
+      
         Vector3 move = transform.right * xAchse + transform.forward * zAchse;
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
