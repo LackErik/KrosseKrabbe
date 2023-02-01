@@ -18,18 +18,15 @@ public class HandleMenuUI : MonoBehaviour
 
     void Update()
     {
-        // 1. mal esc => Menü offen
-        OpenMenuByEsc();
-
-        // andere UI verstecken wenn Menü offen
-        if (menuUI.activeSelf) {
-            ingameUI.SetActive(false);
-        } else {
-            ingameUI.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Escape)) { 
+            if (menuUI.activeSelf) { 
+                CloseMenuByEsc();
+                ingameUI.SetActive(true);
+            } else { 
+                OpenMenuByEsc();
+                ingameUI.SetActive(false);
+            } 
         }
-
-        // 2. mal esc => Menü wieder schließen
-        //CloseMenuByEsc(); //BUG: wenn aktiv, dann funkt das Menü garnicht mehr
     }
 
     // Open Menü
