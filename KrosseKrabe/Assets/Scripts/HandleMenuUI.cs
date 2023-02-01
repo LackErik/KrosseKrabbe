@@ -29,7 +29,7 @@ public class HandleMenuUI : MonoBehaviour
         }
 
         // 2. mal esc => Menü wieder schließen
-        //CloseMenuByEsc();
+        //CloseMenuByEsc(); //BUG: wenn aktiv, dann funkt das Menü garnicht mehr
     }
 
     // Open Menü
