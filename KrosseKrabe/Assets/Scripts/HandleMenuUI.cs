@@ -8,25 +8,18 @@ public class HandleMenuUI : MonoBehaviour
     //public static bool MenuIsActive = false;
     public GameObject menuUI;
     public GameObject ingameUI;
-    // Start is called before the first frame update
+    
+    
     void Start()
     {
-        // Zum Strtzeitpunkt soll das Menü geschlossen sein
+        // Zum Startzeitpunkt soll das Menü geschlossen sein
         menuUI.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         // 1. mal esc => Menü offen
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            // Menü aktivieren
-            menuUI.SetActive(true);
-            
-
-            // Mouse Interaktion solange das Menü offen ist erlauben sonst wie "inGame"
-            Cursor.lockState = CursorLockMode.Confined;
-        }
+        OpenMenuByEsc();
 
         // andere UI verstecken wenn Menü offen
         if (menuUI.activeSelf) {
@@ -34,15 +27,34 @@ public class HandleMenuUI : MonoBehaviour
         } else {
             ingameUI.SetActive(true);
         }
-        
-        
 
+        // 2. mal esc => Menü wieder schließen
+        //CloseMenuByEsc();
+    }
+
+    // Open Menü
+    public void OpenMenuByEsc() { 
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            // Menü aktivieren
+            menuUI.SetActive(true);
+            // Mouse Interaktion solange das Menü offen ist erlauben sonst wie "inGame"
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+    }
+
+    // Close Menü
+    public void CloseMenuByEsc() {
+        // Wenn Menü aktive und esc wieder gedrückt wird...
+        if (menuUI.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) { 
+            menuUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+        }   
     }
     public void CloseMenuByBotton() {
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        
     }
+
 
     // handle Scenes:
     public void ChangeSceneToLobby() {

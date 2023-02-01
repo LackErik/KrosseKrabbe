@@ -1236,8 +1236,8 @@ MonoBehaviour:
   senf: {fileID: 267929839}
   ketchup: {fileID: 2010757712}
   ingameUiScript: {fileID: 770290904}
-  meatGrillPosition: {fileID: 0}
-  rawMeat: {fileID: 0}
+  meatGrillPosition: {fileID: 1780683317}
+  rawMeat: {fileID: 1186122337}
 --- !u!82 &115365887
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11028,8 +11028,8 @@ MonoBehaviour:
   rawMeat: {fileID: 1186122337}
   cookedMeat: {fileID: 215778678}
   burnedMeat: {fileID: 74116885}
-  rawToCookedTime: 180
-  CookedToBurnedTime: 60
+  rawToCookedTime: 15
+  CookedToBurnedTime: 15
 --- !u!1 &3297737589524193320
 GameObject:
   m_ObjectHideFlags: 0
