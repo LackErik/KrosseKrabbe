@@ -136,7 +136,8 @@ public class Raycaster : MonoBehaviour
         {
             if (selectedGameObject.transform.position.z < 4.0f && selectedGameObject.transform.position.z > 3.4f)
             {
-                Debug.Log(selectedGameObject.name);
+                Debug.Log("selectedGameObject:" + selectedGameObject + selectedGameObject.name);
+                Debug.Log("rawMeat:" + rawMeat + rawMeat.name);
                 if(selectedGameObject == rawMeat)
                 {
                     Debug.Log(selectedGameObject.name + " == " + rawMeat.name);

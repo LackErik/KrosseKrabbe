@@ -1183,10 +1183,15 @@ MonoBehaviour:
   holding: 0
   objectsInOrder: []
   interactions:
+  - model: {fileID: 1186122337}
+    instruction: 
+    helpMsg: Rohes fleisch auf den Grill legen
+    errorMsg: Rohes fleisch auf den Grill legen
+    endPosition: {fileID: 1197621654}
   - model: {fileID: 215778678}
-    instruction: Aufs Brot
-    helpMsg: 0?
-    errorMsg: 0!
+    instruction: 
+    helpMsg: Gebratenes Patty auf den Burger legen
+    errorMsg: Gebratenes Patty auf den Burger legen
     endPosition: {fileID: 1101221233}
   - model: {fileID: 919132148964335496}
     instruction: 
