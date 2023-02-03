@@ -8,6 +8,7 @@ public class HandleMenuUI : MonoBehaviour
     //public static bool MenuIsActive = false;
     public GameObject menuUI;
     public GameObject ingameUI;
+    // public GameObject rezeptUI; evtl noch einbauen
     
     
     void Start()
@@ -47,6 +48,7 @@ public class HandleMenuUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }   
     }
+    // Close Menü by Button
     public void CloseMenuByBotton() {
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
