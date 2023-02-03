@@ -119,11 +119,11 @@ public class Raycaster : MonoBehaviour
                     Debug.Log(selectedGameObject.name);
                     selectedGameObject.transform.position = tempEndPosition.position;
                     holding = false;
-                    if (objectIndex == 2)
+                    if (objectIndex == 3)
                     {
                         ketchup.SetActive(true);
                     }
-                    if (objectIndex == 3)
+                    if (objectIndex == 4)
                     {
                         senf.SetActive(true);
                     }
