@@ -17,7 +17,8 @@ public class GrillBehavior : MonoBehaviour
     private float nextActionTime;
     private float period;
     private bool startCooking;
-  
+    public AudioSource sizzelSound;
+
 
     private void Awake()
     {
@@ -69,10 +70,12 @@ public class GrillBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             period = 0.05f;
+            sizzelSound.pitch = 1.5f;
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             period = 1;
+            sizzelSound.pitch = 1;
         }
         //Timer Stopen
         if (cookedMeat.transform.position != meatGrillPosition.transform.position)
@@ -87,7 +90,11 @@ public class GrillBehavior : MonoBehaviour
 
             if (Time.time > nextActionTime)
             {
-
+                if (!sizzelSound.isPlaying)
+                {
+                    sizzelSound.Play();
+                }
+               
                 grillTime++;
                 nextActionTime = Time.time + period;
 

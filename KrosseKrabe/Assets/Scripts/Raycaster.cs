@@ -26,7 +26,10 @@ public class Raycaster : MonoBehaviour
     //handle RawMeat
     public GameObject meatGrillPosition;
     public GameObject rawMeat;
-    
+
+    public AudioSource korrektSound;
+    public AudioSource wrongSound;
+
 
     private void Awake()
     {
@@ -88,9 +91,11 @@ public class Raycaster : MonoBehaviour
             tempSelected = interactions[objectIndex].model;
 
             if (objectIndex < 9) {
+               
                 objectIndex++;
             }
-            
+            korrektSound.Play();
+
             Debug.Log("Nr." + objectIndex + " " + selectedGameObject.name);
         
             // txt.SetText("Nr." + objectIndex + " " + selectedGameObject.name);
@@ -100,6 +105,7 @@ public class Raycaster : MonoBehaviour
         {
             //UI Funktion für Error jedoch nur dann wenn falsch geklickt
             didError(selectedGameObject);
+            wrongSound.Play();
             Debug.Log("Flase: " + interactions[objectIndex].model);
            // txt.SetText("Wrong Number");
         }
@@ -119,11 +125,11 @@ public class Raycaster : MonoBehaviour
                     Debug.Log(selectedGameObject.name);
                     selectedGameObject.transform.position = tempEndPosition.position;
                     holding = false;
-                    if (objectIndex == 2)
+                    if (objectIndex == 3)
                     {
                         ketchup.SetActive(true);
                     }
-                    if (objectIndex == 3)
+                    if (objectIndex == 4)
                     {
                         senf.SetActive(true);
                     }

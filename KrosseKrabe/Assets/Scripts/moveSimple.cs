@@ -36,13 +36,10 @@ public class moveSimple : MonoBehaviour
         }
         xAchse = Input.GetAxis("Horizontal");
         zAchse = Input.GetAxis("Vertical");
- 
-        if(xAchse != 0 || zAchse != 0) 
-        {
-            audiofoot.Play();
-            Debug.Log("laufe");
-        }
-      
+
+        laufSound();
+
+
         Vector3 move = transform.right * xAchse + transform.forward * zAchse;
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -53,5 +50,21 @@ public class moveSimple : MonoBehaviour
         cc.Move(velocity * Time.deltaTime);
 
     
+    }
+    void laufSound()
+    {
+
+        if (Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f)
+        {
+            Debug.Log("lauf");
+            if (!audiofoot.isPlaying)
+            {
+                audiofoot.Play(0);
+            }
+
+
+        }
+        else { audiofoot.Stop(); }
+
     }
 }
