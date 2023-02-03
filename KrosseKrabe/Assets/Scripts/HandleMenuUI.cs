@@ -68,4 +68,9 @@ public class HandleMenuUI : MonoBehaviour
     public void QuitGame() {
         Application.Quit();
     }
+
+    public void ReloadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

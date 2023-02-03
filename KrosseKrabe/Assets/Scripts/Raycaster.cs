@@ -20,7 +20,7 @@ public class Raycaster : MonoBehaviour
 
     // Pass Information to the IngameUI Script
     public IngameUI ingameUiScript;
-    private int errorCount;
+    public int errorCount;
     private int helpCount;
 
     //handle RawMeat
