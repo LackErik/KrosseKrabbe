@@ -4067,12 +4067,12 @@ GameObject:
   - component: {fileID: 703967047}
   - component: {fileID: 703967046}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageWood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &703967045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7303,7 +7303,7 @@ GameObject:
   - component: {fileID: 1317324813}
   - component: {fileID: 1317324812}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageSB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7665,7 +7665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1362550413
 Transform:
   m_ObjectHideFlags: 0
@@ -10160,6 +10160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rezeptUI: {fileID: 828789008}
+  ingameUI: {fileID: 770290899}
 --- !u!1 &1962200609
 GameObject:
   m_ObjectHideFlags: 0

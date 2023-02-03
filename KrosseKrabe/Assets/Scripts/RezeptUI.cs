@@ -5,10 +5,14 @@ using UnityEngine;
 public class RezeptUI : MonoBehaviour
 {
     public GameObject rezeptUI;
+    public GameObject ingameUI;
 
     private void Awake()
     {
+        // RezeptUI deaktivieren
         rezeptUI.SetActive(true);
+        // IngameUI deaktivieren
+        ingameUI.SetActive(false);
     }
     private void Start()
     {
@@ -26,8 +30,10 @@ public class RezeptUI : MonoBehaviour
     }
     public void ButtonClickBeginnen()
     {
-        // UI deaktivieren
+        // RezeptUI deaktivieren
         rezeptUI.SetActive(false);
+        // IngameUI deaktivieren
+        ingameUI.SetActive(true);
         // Spiel starten / Bewegung erlauben
         Time.timeScale = 1;
         // Maus interaktion verbieten
