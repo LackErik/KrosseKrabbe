@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameoverUI : MonoBehaviour
 {
@@ -99,5 +100,17 @@ public class GameoverUI : MonoBehaviour
     // Es fehlen noch funktionen um die scene neu zu laden und um wieder in lobby zurück zu kehren bei Knopfdruck
     // Überlegung: diese Funktion in ein eigenes Script auszulagern weil diese Funktion entwerder schon da sind wieder verwendet werden könnten unabhängig von welcher ui
     // Die funktionen liegen jz im handleMenu Script
+    
+    // Versuch die Funktion über dieses Script zu verwenden ... geht auch nicht!!!
+    /* public void ReloadCurrentScene()
+    {
+        // Funktioniert leider nicht
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }*/
     
 }

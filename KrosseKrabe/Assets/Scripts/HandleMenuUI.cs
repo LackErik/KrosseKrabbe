@@ -72,11 +72,15 @@ public class HandleMenuUI : MonoBehaviour
 
     public void ReloadCurrentScene()
     {
-        // Funktioniert leider nicht
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        // 1. Funktioniert leider nicht
+        //Scene scene = SceneManager.GetActiveScene();
+        //SceneManager.LoadScene(scene.name);
         
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // 2. Funktioniert auch nicht!
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        // 3. Funktioniert auch nicht!
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

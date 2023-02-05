@@ -8889,9 +8889,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 739076071}
-        m_TargetAssemblyTypeName: HandleMenuUI, Assembly-CSharp
-        m_MethodName: ChangeSceneToKitchen
+      - m_Target: {fileID: 1515326648}
+        m_TargetAssemblyTypeName: GameoverUI, Assembly-CSharp
+        m_MethodName: ReloadCurrentScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
