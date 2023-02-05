@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HandleMenuUI : MonoBehaviour
 {
     //public static bool MenuIsActive = false;
-    public GameObject menuUI;
+    public GameObject canvasMenuUI;
     public GameObject ingameUI;
     // public GameObject rezeptUI; evtl noch einbauen
     
@@ -14,13 +14,14 @@ public class HandleMenuUI : MonoBehaviour
     void Start()
     {
         // Zum Startzeitpunkt soll das Menü geschlossen sein
-        menuUI.SetActive(false);
+        canvasMenuUI.SetActive(false);
+        
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) { 
-            if (menuUI.activeSelf) { 
+            if (canvasMenuUI.activeSelf) { 
                 CloseMenuByEsc();
                 ingameUI.SetActive(true);
             } else { 
@@ -34,7 +35,7 @@ public class HandleMenuUI : MonoBehaviour
     public void OpenMenuByEsc() { 
         if (Input.GetKeyDown(KeyCode.Escape)) {
             // Menü aktivieren
-            menuUI.SetActive(true);
+            canvasMenuUI.SetActive(true);
             // Mouse Interaktion solange das Menü offen ist erlauben sonst wie "inGame"
             Cursor.lockState = CursorLockMode.Confined;
         }
@@ -43,14 +44,14 @@ public class HandleMenuUI : MonoBehaviour
     // Close Menü
     public void CloseMenuByEsc() {
         // Wenn Menü aktive und esc wieder gedrückt wird...
-        if (menuUI.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) { 
-            menuUI.SetActive(false);
+        if (canvasMenuUI.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) { 
+            canvasMenuUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
         }   
     }
     // Close Menü by Button
     public void CloseMenuByBotton() {
-        menuUI.SetActive(false);
+        canvasMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -58,7 +59,7 @@ public class HandleMenuUI : MonoBehaviour
     // handle Scenes:
     public void ChangeSceneToLobby() {
         SceneManager.LoadScene("Lobby");
-        menuUI.SetActive(false);
+        canvasMenuUI.SetActive(false);
     }
 
     public void ChangeSceneToKitchen() {
@@ -71,6 +72,11 @@ public class HandleMenuUI : MonoBehaviour
 
     public void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // Funktioniert leider nicht
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }

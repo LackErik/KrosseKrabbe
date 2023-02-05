@@ -4058,7 +4058,7 @@ GameObject:
   - component: {fileID: 520065295}
   - component: {fileID: 520065294}
   m_Layer: 5
-  m_Name: CanvasMenu
+  m_Name: CanvasGameoverUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4854,7 +4854,7 @@ GameObject:
   - component: {fileID: 696577949}
   - component: {fileID: 696577948}
   m_Layer: 5
-  m_Name: CanvasMenu
+  m_Name: CanvasMenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5303,7 +5303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64bc6e95fa90b8a438640c3844a4ab97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuUI: {fileID: 696577946}
+  canvasMenuUI: {fileID: 696577946}
   ingameUI: {fileID: 770290899}
 --- !u!1 &741476375
 GameObject:
@@ -5625,6 +5625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   errorCountLabel: {fileID: 629970742}
   helpCountLabel: {fileID: 465252628}
+  uiElement: {fileID: 1607240351}
   errorLabel: {fileID: 99101545}
   errorDisplayTime: 5
   helpLabel: {fileID: 2124451584}
@@ -8890,7 +8891,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 739076071}
         m_TargetAssemblyTypeName: HandleMenuUI, Assembly-CSharp
-        m_MethodName: ReloadCurrentScene
+        m_MethodName: ChangeSceneToKitchen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10218,7 +10219,7 @@ MonoBehaviour:
   failedTxtBurnedPatty: {fileID: 1419276693}
   failedTxtErrors: {fileID: 508580795}
   successTxt: {fileID: 293031263}
-  menuUI: {fileID: 739076068}
+  menuUI: {fileID: 696577946}
   burnedPatty: {fileID: 74116885}
   maxErrors: 5
   raycasterScript: {fileID: 115365886}

@@ -14,9 +14,10 @@ public class IngameUI : MonoBehaviour
 
     // Help Count UI (Counter)
     [SerializeField] private TextMeshProUGUI helpCountLabel = null;
-    
+
 
     // Help and Error Text UI (Text)
+    public GameObject uiElement;
     [SerializeField] private TextMeshProUGUI errorLabel;
     [SerializeField] private float errorDisplayTime = 5.0f;
     [SerializeField] private TextMeshProUGUI helpLabel;
@@ -37,16 +38,20 @@ public class IngameUI : MonoBehaviour
         helpCountLabel.SetText("0");
         errorCountLabel.SetText("0");
     }
-    void Start(){}
+    void Start(){
+        uiElement.SetActive(false);
+    }
     void Update(){}
 
     // 2.1 handle Help and Error Text + Counter
     
     private IEnumerator DisplayForDuration(TextMeshProUGUI label, string msg, float duration)
         {
-            label.text = msg;
+        uiElement.SetActive(true);
+        label.text = msg;
             yield return new WaitForSeconds(duration);
             label.text = "";
+            uiElement.SetActive(false);
         }
     public void DisplayHelp(string helpMsg, int helpCount)
         {
