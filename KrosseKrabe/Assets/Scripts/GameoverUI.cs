@@ -6,10 +6,12 @@ using TMPro;
 public class GameoverUI : MonoBehaviour
 {
 // ===> Initalisierung
-    // GameoveUI
+    // GameoverUI
     public GameObject gameoverUICanvas;
+    [SerializeField] private TextMeshProUGUI headerTxt;
     [SerializeField] private TextMeshProUGUI failedTxtBurnedPatty;
     [SerializeField] private TextMeshProUGUI failedTxtErrors;
+    [SerializeField] private TextMeshProUGUI successTxt;
 
     //handle MenuUI
     public GameObject menuUI;
@@ -22,6 +24,10 @@ public class GameoverUI : MonoBehaviour
     public Raycaster raycasterScript; // muss vom Raycasterscript kommen
     private int didErrors;
 
+    // success when burger finished
+    public GameObject burgerBunTop;
+    public GameObject burgerBunTopPos;
+
 
     // ===> Methoden
     // Start is called before the first frame update
@@ -32,8 +38,10 @@ public class GameoverUI : MonoBehaviour
         //nur Canvas deaktivier, damit Script ausgeführt bleibt und Prüfungen statt finden können
 
         // nur der entsprechende Grund soll später erscheinen:
+        headerTxt.text = "";
         failedTxtBurnedPatty.text = "";
         failedTxtErrors.text = "";
+        successTxt.text = "";
     }
 
     // Update is called once per frame
@@ -42,6 +50,8 @@ public class GameoverUI : MonoBehaviour
         // GameoverUI mit passenden Text je nach Grund
         checkForBurnedPatty();
         checkForErrorCount();
+        checkForSuccess();
+
 
         // didErrors prüfen
         didErrors = raycasterScript.errorCount;
@@ -50,17 +60,30 @@ public class GameoverUI : MonoBehaviour
     void checkForBurnedPatty(){
         if(burnedPatty.activeSelf){
             handleGameover();
+            headerTxt.text = "Failed!";
             failedTxtBurnedPatty.text = "Dein Patty ist verbrannt!";
         }
     }
 
-    void checkForErrorCount(){
-        if(maxErrors == didErrors){
+    void checkForErrorCount()
+    {
+        if (maxErrors == didErrors)
+        {
             handleGameover();
-            failedTxtErrors.text = "Du hast " + didErrors + " von " + maxErrors+ " Fehler gemacht";
+            headerTxt.text = "Failed!";
+            failedTxtErrors.text = "Du hast " + didErrors + " von " + maxErrors + " Fehler gemacht";
         }
-
     }
+    void checkForSuccess(){
+        if(burgerBunTopPos.transform.position == burgerBunTop.transform.position)
+        {
+            handleGameover();
+            headerTxt.text = "passed!";
+            successTxt.text = "Du hast das Training erfolgreich bestanden!";
+            // gameObject in der Lobby von Silberner Pfannenwender aktivieren 
+        }
+    }
+    
 
     void handleGameover(){
         // gameoverUI muss angezeigt werden

@@ -56,7 +56,7 @@ public class moveSimple : MonoBehaviour
 
         if (Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f)
         {
-            Debug.Log("lauf");
+            // Debug.Log("lauf");
             if (!audiofoot.isPlaying)
             {
                 audiofoot.Play(0);
