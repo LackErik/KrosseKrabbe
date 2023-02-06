@@ -43,25 +43,26 @@ public class GrillBehavior : MonoBehaviour
         if (rawMeat.transform.position == meatGrillPosition.transform.position){
             startCooking = true;
             // Sekunden bis Patty fertig
-            if(grillTime == 180)
-            {
-                rawMeat.SetActive(false);
-                cookedMeat.SetActive(true);
-                
-            }
-            // Sekunden bis Patty Verbrand
-            if (grillTime == 185 && cookedMeat.transform.position == meatGrillPosition.transform.position)
-            {
-               
-                cookedMeat.SetActive(false);
-                burnedMeat.SetActive(true);
-            }
+           
             
   
         }
-        
-  
-        
+        if (grillTime == 180)
+        {
+            rawMeat.SetActive(false);
+            cookedMeat.SetActive(true);
+
+        }
+        // Sekunden bis Patty Verbrand
+        if (grillTime == 185 && cookedMeat.transform.position == meatGrillPosition.transform.position)
+        {
+
+            cookedMeat.SetActive(false);
+            burnedMeat.SetActive(true);
+        }
+
+
+
     }
 
     private void showTimer()

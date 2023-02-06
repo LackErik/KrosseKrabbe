@@ -102,15 +102,17 @@ public class GameoverUI : MonoBehaviour
     // Die funktionen liegen jz im handleMenu Script
     
     // Versuch die Funktion über dieses Script zu verwenden ... geht auch nicht!!!
-    /* public void ReloadCurrentScene()
+     public void ReloadCurrentScene()
     {
         // Funktioniert leider nicht
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        
+        Debug.Log("loading scene 1");
+        SceneManager.LoadScene(1);
+        Debug.Log("loading end");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }*/
-    
+    }
+
 }

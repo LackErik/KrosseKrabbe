@@ -123,8 +123,9 @@ public class Raycaster : MonoBehaviour
                 if(selectedGameObject != rawMeat)
                 {
                     Debug.Log(selectedGameObject.name);
-                    selectedGameObject.transform.position = tempEndPosition.position;
                     holding = false;
+                    selectedGameObject.transform.position = tempEndPosition.position;
+                    
                     if (objectIndex == 3)
                     {
                         ketchup.SetActive(true);
