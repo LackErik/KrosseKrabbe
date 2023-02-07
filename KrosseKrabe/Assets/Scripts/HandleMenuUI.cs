@@ -38,6 +38,7 @@ public class HandleMenuUI : MonoBehaviour
             canvasMenuUI.SetActive(true);
             // Mouse Interaktion solange das Menü offen ist erlauben sonst wie "inGame"
             Cursor.lockState = CursorLockMode.Confined;
+            Time.timeScale = 0;
         }
     }
 
@@ -47,12 +48,14 @@ public class HandleMenuUI : MonoBehaviour
         if (canvasMenuUI.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) { 
             canvasMenuUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
         }   
     }
     // Close Menü by Button
     public void CloseMenuByBotton() {
         canvasMenuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
     }
 
 
