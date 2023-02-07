@@ -1198,52 +1198,53 @@ MonoBehaviour:
   interactions:
   - model: {fileID: 114456986}
     instruction: 
-    helpMsg: Rohes fleisch auf den Grill legen
-    errorMsg: Rohes fleisch auf den Grill legen
+    helpMsg: lege das rohe Patty auf den Grill
+    errorMsg: du musst warten, biss das Patty fertig gebraten ist
     endPosition: {fileID: 1197621654}
   - model: {fileID: 215778678}
     instruction: 
-    helpMsg: Gebratenes Patty auf den Burger legen
-    errorMsg: Gebratenes Patty auf den Burger legen
+    helpMsg: warte bis das Patty fertig gebraten ist und lege es auf den unteren
+      Burgerbun
+    errorMsg: das Patty ist noch nicht fertig gebraten!
     endPosition: {fileID: 1101221233}
   - model: {fileID: 919132148964335496}
     instruction: 
-    helpMsg: 1?
-    errorMsg: 1!
+    helpMsg: "f\xFCge Ketchup zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 2089138093}
   - model: {fileID: 919132148681522699}
     instruction: 
-    helpMsg: 2?
-    errorMsg: 2!
+    helpMsg: "f\xFCge Senf zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 852928165}
   - model: {fileID: 1547292268}
     instruction: 
-    helpMsg: 3?
-    errorMsg: 3!
+    helpMsg: "f\xFCge die Gurken zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 1773475421}
   - model: {fileID: 1346289046}
     instruction: 
-    helpMsg: 4?
-    errorMsg: 4!
+    helpMsg: "f\xFCge die Zwiebeln zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 701251483}
   - model: {fileID: 1844139526}
     instruction: 
-    helpMsg: 5?
-    errorMsg: 5!
+    helpMsg: "f\xFCge den Salat zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 1233760827}
   - model: {fileID: 99916280}
     instruction: 
-    helpMsg: 6?
-    errorMsg: 6!
+    helpMsg: "f\xFCge den K\xE4se zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 781782806}
   - model: {fileID: 1463331916}
     instruction: 
-    helpMsg: 7?
-    errorMsg: 7!
+    helpMsg: "f\xFCge die Tomate zu dem B\xFCrger hinzu"
+    errorMsg: "Das ist die falsche Zutat. Dr\xFCcke h f\xFCr einen Tipp! "
     endPosition: {fileID: 254338277}
   - model: {fileID: 1823264530}
     instruction: 
-    helpMsg: 8?
+    helpMsg: "f\xFCge die Gurken zu dem B\xFCrger hinzu"
     errorMsg: 8!
     endPosition: {fileID: 1197621654}
   senf: {fileID: 267929839}
