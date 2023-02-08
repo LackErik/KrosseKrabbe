@@ -11,6 +11,9 @@ public class AnimationControlle : MonoBehaviour
     public List<Interaction> interactions;
     private string[] animatorStates = { "patty", "sauce","senf", "pickels","onions","salat","cheese","tomato","bun" };
     public TextMeshProUGUI instructionDisplay;
+    public GameObject btnSkip;
+    public GameObject btnBack;
+
 
     public void PlayNextAnimation()
     {
@@ -26,6 +29,7 @@ public class AnimationControlle : MonoBehaviour
             currentState++;
             
         }
+        
     }
 
     public void PlayPreviousAnimation()
@@ -50,6 +54,18 @@ public class AnimationControlle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentState == 0)
+        {
+            btnBack.SetActive(false);
+        }
+        else btnBack.SetActive(true);
+
+        if (currentState == animatorStates.Length)
+        {
+            btnSkip.SetActive(false);
+        }
+        else btnSkip.SetActive(true);
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             PlayNextAnimation();

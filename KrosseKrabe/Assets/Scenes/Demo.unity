@@ -3629,6 +3629,8 @@ MonoBehaviour:
     errorMsg: 
     endPosition: {fileID: 0}
   instructionDisplay: {fileID: 1791802289}
+  btnSkip: {fileID: 471822386}
+  btnBack: {fileID: 218014015}
 --- !u!1 &396272405
 GameObject:
   m_ObjectHideFlags: 0
