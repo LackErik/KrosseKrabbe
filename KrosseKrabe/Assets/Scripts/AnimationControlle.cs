@@ -14,6 +14,7 @@ public class AnimationControlle : MonoBehaviour
     public TextMeshProUGUI instructionDisplay;
     public GameObject btnSkip;
     public GameObject btnBack;
+    public GameObject bunBotown;
     public CinemachineVirtualCamera c_VirtualCam;
 
     public void PlayNextAnimation()
@@ -62,6 +63,7 @@ public class AnimationControlle : MonoBehaviour
     {
         if(currentState == 0)
         {
+            c_VirtualCam.m_LookAt = bunBotown.transform;
             btnBack.SetActive(false);
         }
         else btnBack.SetActive(true);
