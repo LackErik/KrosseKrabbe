@@ -64,9 +64,17 @@ public class HandleMenuUI : MonoBehaviour
         SceneManager.LoadScene("Lobby");
         canvasMenuUI.SetActive(false);
     }
-
+    public void ChangeSceneToDemo()
+    {
+        SceneManager.LoadScene("Demo");
+    }
     public void ChangeSceneToKitchen() {
         SceneManager.LoadScene("Kitchen");
+    }
+
+    public void ChangeSceneToKitchenPro()
+    {
+        SceneManager.LoadScene("KitchenPro");
     }
 
     public void QuitGame() {

@@ -80,7 +80,7 @@ public class GameoverUI : MonoBehaviour
         {
             handleGameover();
             headerTxt.text = "passed!";
-            successTxt.text = "Du hast das Training erfolgreich bestanden!";
+            successTxt.text = "Klasse! Du hast dir den goldenen Pfannenwender verdient!";
             // gameObject in der Lobby von Silberner Pfannenwender aktivieren 
         }
     }
@@ -95,24 +95,6 @@ public class GameoverUI : MonoBehaviour
         Time.timeScale = 0;
         // Mausinteraktion erlauben
         Cursor.lockState = CursorLockMode.Confined;   
-    }
-
-    // Es fehlen noch funktionen um die scene neu zu laden und um wieder in lobby zurück zu kehren bei Knopfdruck
-    // Überlegung: diese Funktion in ein eigenes Script auszulagern weil diese Funktion entwerder schon da sind wieder verwendet werden könnten unabhängig von welcher ui
-    // Die funktionen liegen jz im handleMenu Script
-    
-    // Versuch die Funktion über dieses Script zu verwenden ... geht auch nicht!!!
-     public void ReloadCurrentScene()
-    {
-        // Funktioniert leider nicht
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-        Debug.Log("loading scene 1");
-        SceneManager.LoadScene(1);
-        Debug.Log("loading end");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
