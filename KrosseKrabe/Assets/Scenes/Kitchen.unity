@@ -3236,7 +3236,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -19201,6 +19201,7 @@ MonoBehaviour:
   waitTimer: 0
   grillTime: 0
   sizzelSound: {fileID: 3273927647863984970}
+  smokeVFX: {fileID: 226007195}
 --- !u!82 &3273927647863984970
 AudioSource:
   m_ObjectHideFlags: 0

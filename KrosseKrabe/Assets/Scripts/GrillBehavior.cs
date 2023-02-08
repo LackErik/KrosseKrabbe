@@ -18,6 +18,7 @@ public class GrillBehavior : MonoBehaviour
     private float period;
     private bool startCooking;
     public AudioSource sizzelSound;
+    public ParticleSystem smokeVFX;
 
 
     private void Awake()
@@ -33,6 +34,7 @@ public class GrillBehavior : MonoBehaviour
         period = 1;
         grillTime = 0;
         startCooking = false;
+        smokeVFX.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -61,6 +63,8 @@ public class GrillBehavior : MonoBehaviour
             burnedMeat.SetActive(true);
         }
 
+        
+        
 
 
     }
@@ -72,22 +76,30 @@ public class GrillBehavior : MonoBehaviour
         {
             period = 0.05f;
             sizzelSound.pitch = 1.5f;
+            ParticleSystem.MainModule mainVfx = smokeVFX.main;
+            mainVfx.simulationSpeed = 2.5f;
+            
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             period = 1;
             sizzelSound.pitch = 1;
+            ParticleSystem.MainModule mainVfx = smokeVFX.main;
+            mainVfx.simulationSpeed = 1;
+
         }
         //Timer Stopen
         if (cookedMeat.transform.position != meatGrillPosition.transform.position)
         {
             startCooking = false;
+            smokeVFX.gameObject.SetActive(false);
             UIgrillTime.text = "";
 
         }
         //Timer Anzeige
         if (startCooking)
         {
+            smokeVFX.gameObject.SetActive(true);
 
             if (Time.time > nextActionTime)
             {
