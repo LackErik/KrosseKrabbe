@@ -80,7 +80,7 @@ public class GameoverUI : MonoBehaviour
         {
             handleGameover();
             headerTxt.text = "passed!";
-            successTxt.text = "Klasse! Du hast dir den goldenen Pfannenwender verdient!";
+            successTxt.text = "Klasse! Du hast es geschafft!";
             // gameObject in der Lobby von Silberner Pfannenwender aktivieren 
         }
     }
