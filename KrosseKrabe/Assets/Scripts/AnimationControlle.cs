@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 public class AnimationControlle : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class AnimationControlle : MonoBehaviour
     public TextMeshProUGUI instructionDisplay;
     public GameObject btnSkip;
     public GameObject btnBack;
-
+    public CinemachineVirtualCamera c_VirtualCam;
 
     public void PlayNextAnimation()
     {
@@ -25,6 +26,7 @@ public class AnimationControlle : MonoBehaviour
             
             animator.SetBool(animatorStates[currentState], true);
             instructionDisplay.SetText(interactions[currentState].instruction);
+            c_VirtualCam.m_LookAt = interactions[currentState].model.transform;
           
             currentState++;
             
@@ -40,7 +42,7 @@ public class AnimationControlle : MonoBehaviour
         {
             currentState--;
             animator.SetBool(animatorStates[currentState], false);
-
+            c_VirtualCam.m_LookAt = interactions[currentState].model.transform;
             instructionDisplay.SetText(interactions[currentState].instruction);
         }
 
@@ -49,6 +51,10 @@ public class AnimationControlle : MonoBehaviour
     void Start()
     {
         instructionDisplay.SetText(interactions[currentState].instruction);
+    }
+    private void Awake()
+    {
+       
     }
 
     // Update is called once per frame
