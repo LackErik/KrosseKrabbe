@@ -55,7 +55,7 @@ public class AnimationControlle : MonoBehaviour
     }
     private void Awake()
     {
-       
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -83,6 +83,6 @@ public class AnimationControlle : MonoBehaviour
         {
             PlayPreviousAnimation();
         }
-
+        Debug.Log(Time.timeScale.ToString());
     }
 }
